@@ -24,7 +24,7 @@ h2 {font-size: 2.7424em; margin-bottom: .333em;}	/* 22px */
 h3 {font-size: 2.2864em}	/* 20px */
 h4 {font-size: 2.0576em}	/* 18px */
 h5 {font-size: 1.8288em}	/* 16px */
-h6 {font-size: 1.6em}		/* 14px */
+h6 {font-size: 1.2em}		/* 14px */
 
 h1, h2, h3, h4, h5, h6 {
 	/* font-weight: 400; */
@@ -56,8 +56,8 @@ h1 a:hover {
 }
 	
 /* Paragraphs */
-p {margin-bottom: 1.143em; color:#333 ; font-size:1.6em}
-pre {margin-bottom: 1.143em; padding: 4px; font-size:1.6em}
+p {margin-bottom: 1.143em; color:#333 ; font-size:1.2em}
+pre {margin-bottom: 1.143em; padding: 4px; font-size:1.2em}
 
 strong, b {font-weight: bold; color: #333;}
 em, i {font-style: italic;}
@@ -450,8 +450,8 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .entry-title a:link, .entry-title a:visited {text-decoration: none; color: #333;}
 .entry-title a:visited {background-color: #fff;}
 .entry-content blockquote {font-size: 1.5em; margin: 10px 20px; }
-/*.entry-content li {font-size: 1.6em;}*/
-#featured .body li {font-size: 1.6em;}
+.entry-content li {font-size: 1.2em;}
+#featured .body li {font-size: 1.2em;}
 #featured .body blockquote {font-size: 1.5em; margin: 10px 20px; }
 
 .hentry .post-info * {font-style: normal;}

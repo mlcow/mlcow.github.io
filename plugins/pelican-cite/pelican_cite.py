@@ -123,7 +123,7 @@ def process_content(article):
 
     # Get the data for the required citations and append to content
     labels = {}
-    content += '<hr/>\n<h2>References</h2>\n<ul>'
+    if len(cited) > 0: content += '<hr/>\n<h2>References</h2>\n<ul>'
     for formatted_entry in formatted_entries:
         key = formatted_entry.key
         ref_id = key.replace(' ','')
@@ -152,6 +152,7 @@ def process_content(article):
     def replace_cites(match):
         label = match.group(3)
         if 'inline &#64;' in match.group():
+            logger.info(" inline citaiton :::  {}  ".format(label))
             return inline_labels_text[label]
         if label in labels:
             if label not in cite_count:

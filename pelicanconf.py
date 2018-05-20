@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'mlcow'
 SITENAME = u'mlcow'
+SITESUBTITLE = u'mlcow'
 SITEURL = ''
 THEME = 'my_themes/SoMA2/'
 PLUGIN_PATHS = ['plugins']
@@ -46,5 +47,5 @@ DEFAULT_PAGINATION = False
 RELATIVE_URLS = True
 
 # pelican-cite
-PUBLICATIONS_SRC = 'content/bibliography.bib'
+#PUBLICATIONS_SRC = 'content/bibliography.bib'
 
