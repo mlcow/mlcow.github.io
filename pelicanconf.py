@@ -5,7 +5,16 @@ from __future__ import unicode_literals
 AUTHOR = u'mlcow'
 SITENAME = u'mlcow'
 SITEURL = ''
-THEME = 'pelican-themes/SoMA2/'
+THEME = 'my_themes/SoMA2/'
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['pelican-cite', 'pandoc_reader']
+
+PANDOC_EXTENSIONS = [
+  '+hard_line_breaks',
+  '+citations'
+]
+
+#PANDOC_ARGS =[ '--filter=pandoc-citeproc']
 
 
 PATH = 'content'
@@ -35,3 +44,7 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+# pelican-cite
+PUBLICATIONS_SRC = 'content/bibliography.bib'
+

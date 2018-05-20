@@ -35,7 +35,8 @@ if sys.version_info[0] < 3:
 __version__ = '0.2.0'
 
 JUMP_BACK = '<a class="cite-backref" href="#ref-{0}-{1}" title="Jump back to reference {1}">{2}</a>'
-CITE_RE = re.compile("\[&#64;(&#64;)?\s*(\w.*?)\s*\]")
+#CITE_RE = re.compile("\[&#64;(&#64;)?\s*(\w.*?)\s*\]")
+CITE_RE = re.compile("\[(inline )?&#64;(&#64;)?\s*(\w.*?)\s*\]")
 
 class Style(UnsrtStyle):
     name = 'inline'
@@ -94,23 +95,35 @@ def process_content(article):
     # Scan post to figure out what citations are needed
     cite_count = {}
     replace_count = {}
+    inline_citation = set()
     for citation in CITE_RE.findall(content):
-        if citation[1] not in cite_count:
-            cite_count[citation[1]] = 1
-            replace_count[citation[1]] = 1
+        if citation[0]:
+            inline_citation.add(citation[2])
+        elif citation[2] not in cite_count:
+            cite_count[citation[2]] = 1
+            replace_count[citation[2]] = 1
         else:
-            cite_count[citation[1]] += 1
+            cite_count[citation[2]] += 1
 
     # Get formatted entries for the appropriate bibliographic entries
     cited = []
+    inline_cited = []
+    inline_labels_text = {}
     for key in data.entries.keys():
         if key in cite_count: cited.append(data.entries[key])
-    if len(cited) == 0: return
+        if key in inline_citation: inline_cited.append(data.entries[key])
+    if len(cited) == 0 and len(inline_cited) == 0: return
     formatted_entries = style.format_entries(cited)
+    inline_formatted_entries = style.format_entries(inline_cited)
+
+    # Get the data for the required inline citations 
+    for formatted_entry in inline_formatted_entries:
+        key = formatted_entry.key
+        inline_labels_text[key] = formatted_entry.text.render(backend)
 
     # Get the data for the required citations and append to content
     labels = {}
-    content += '<hr>\n<h2>Bibliography</h2>\n'
+    content += '<hr/>\n<h2>References</h2>\n<ul>'
     for formatted_entry in formatted_entries:
         key = formatted_entry.key
         ref_id = key.replace(' ','')
@@ -121,7 +134,7 @@ def process_content(article):
         t = t.replace('\\}', '&#125;')
         t = t.replace('{', '')
         t = t.replace('}', '')
-        text = ("<p id='" + ref_id + "'>" + t)
+        text = ("<li><p id='" + ref_id + "'>" + t)
         for i in range(cite_count[key]):
             if i == 0:
                 text += ' ' + JUMP_BACK.format(ref_id,1,'↩')
@@ -129,14 +142,17 @@ def process_content(article):
                     text += JUMP_BACK.format(ref_id,1,' <sup>1</sup> ')
             else:
                 text += JUMP_BACK.format(ref_id,i+1,'<sup>'+str(i+1)+'</sup> ')
-        text += '</p>'
+        text += '</p></li>'
         content += text + '\n'
         labels[key] = label
+    content += "</ul>"
 
     # Replace citations in article/page
     cite_count = {}
     def replace_cites(match):
-        label = match.group(2)
+        label = match.group(3)
+        if 'inline &#64;' in match.group():
+            return inline_labels_text[label]
         if label in labels:
             if label not in cite_count:
                 cite_count[label] = 1
