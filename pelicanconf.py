@@ -7,6 +7,7 @@ SITENAME = u'mlcow'
 SITESUBTITLE = u'mlcow'
 SITEURL = ''
 THEME = 'my_themes/SoMA2/'
+DISQUS_SITENAME = "mlcow-github-io"
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['pelican-cite', 'pandoc_reader']
 
