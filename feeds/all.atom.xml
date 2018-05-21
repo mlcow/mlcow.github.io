@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2018-05-20T00:00:00+05:30</updated><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;p&gt;Articles&lt;/p&gt;
-&lt;p&gt;TODO: Add subsections&lt;/p&gt;
+&lt;p&gt;TODO: Add subsections &lt;span class="math"&gt;\(P(x)\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="citation" data-cites="DBLP:journals/corr/JeanCMB14"&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
+&lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
 On using very large target vocabulary for neural machine translation.
 &lt;em&gt;CoRR&lt;/em&gt;, 2014.
-URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class="citation" data-cites="DBLP:journals/corr/abs-1301-3781"&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
-Efficient estimation of word …&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Articles&lt;/p&gt;
-&lt;p&gt;TODO: Add subsections&lt;/p&gt;
+URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+Efficient estimation …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Articles&lt;/p&gt;
+&lt;p&gt;TODO: Add subsections &lt;span class="math"&gt;\(P(x)\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="citation" data-cites="DBLP:journals/corr/JeanCMB14"&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
+&lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
 On using very large target vocabulary for neural machine translation.
 &lt;em&gt;CoRR&lt;/em&gt;, 2014.
-URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span class="citation" data-cites="DBLP:journals/corr/abs-1301-3781"&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
 Efficient estimation of word representations in vector space.
 &lt;em&gt;CoRR&lt;/em&gt;, 2013.
-URL: &lt;a href="http://arxiv.org/abs/1301.3781"&gt;http://arxiv.org/abs/1301.3781&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1301.3781"&gt;arXiv:1301.3781&lt;/a&gt;.&lt;/span&gt;&lt;/li&gt;
+URL: &lt;a href="http://arxiv.org/abs/1301.3781"&gt;http://arxiv.org/abs/1301.3781&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1301.3781"&gt;arXiv:1301.3781&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/ul&gt;</content></entry><entry><title>First Moo!</title><link href="https://mlcow.github.io/first-moo.html" rel="alternate"></link><published>2018-04-04T04:04:00+05:30</published><updated>2018-04-04T04:04:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-04-04:/first-moo.html</id><summary type="html">&lt;p&gt;Hey there!&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Hey there!&lt;/p&gt;
-</content></entry></feed>
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%&amp;#64;#$&amp;#64;#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%&amp;#64;#$&amp;#64;#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;/ul&gt;</content></entry><entry><title>First Moo!</title><link href="https://mlcow.github.io/first-moo.html" rel="alternate"></link><published>2018-04-04T04:04:00+05:30</published><updated>2018-04-04T04:04:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-04-04:/first-moo.html</id><summary type="html">&lt;p&gt;Hey there!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey there!&lt;/p&gt;</content></entry></feed>
