@@ -8,8 +8,9 @@ SITESUBTITLE = u'mlcow'
 SITEURL = ''
 THEME = 'my_themes/SoMA2/'
 DISQUS_SITENAME = "mlcow-github-io"
-PLUGIN_PATHS = ['plugins']
-PLUGINS = ['pelican-cite', 'pandoc_reader']
+PLUGIN_PATHS = ['pelican-plugins', 'plugins']
+PLUGINS = ['pelican-cite', 'render_math']
+#PLUGINS = ['pelican-cite', 'pandoc_reader', 'render_math']
 
 PANDOC_EXTENSIONS = [
   '+hard_line_breaks',

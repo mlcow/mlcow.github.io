@@ -4,7 +4,8 @@ publications_src: content/bibliography.bib
 
 Articles
 
-TODO: Add subsections
+TODO: Add subsections $P(x)$
+
 
 - [inline @DBLP:journals/corr/JeanCMB14]
 - [inline @DBLP:journals/corr/abs-1301-3781]
