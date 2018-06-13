@@ -1,7 +1,7 @@
 {% block content %}
 <ul>
-{% for category, articles in categories %}
-	<li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+{% for cat, articles in categories %}
+	<li><a{% if cat == category %} class="active"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
