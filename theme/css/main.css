@@ -44,9 +44,14 @@ a:link {
 	color: #4896DF;	
 	}
 
+a.active {
+	color: #dd8508;
+}
+
 a:hover, a:active {
 
-	color: #4896DF;
+	color: #dd8508;
+	/*color: #4896DF;*/
 	text-decoration: underline;
 }
 

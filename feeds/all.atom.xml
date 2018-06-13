@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2018-05-20T00:00:00+05:30</updated><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;p&gt;Articles&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2018-05-23T00:00:00+05:30</updated><entry><title>NCE &amp; Sampled Softmax</title><link href="https://mlcow.github.io/nce-sampled-softmax.html" rel="alternate"></link><published>2018-05-23T00:00:00+05:30</published><updated>2018-05-23T00:00:00+05:30</updated><author><name>Vijayender Karnaty</name></author><id>tag:mlcow.github.io,2018-05-23:/nce-sampled-softmax.html</id><summary type="html">&lt;h3&gt;NCE&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='#DBLP:journals/corr/Dyer14' id='ref-DBLP:journals/corr/Dyer14-1'&gt;Dyer (2014)&lt;/a&gt; .. Note on why not neg sampling for all tasks&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.tensorflow.org/api_guides/python/nn#Candidate_Sampling"&gt;https://www.tensorflow.org/api_guides/python/nn#Candidate_Sampling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Sampled softmax&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='#DBLP:journals/corr/JeanCMB14' id='ref-DBLP:journals/corr/JeanCMB14-1'&gt;Jean et al. (2014)&lt;/a&gt; .. Sampled softmax for language translation&lt;/li&gt;
+&lt;li&gt;&lt;a href='#bengio2008adaptive' id='ref-bengio2008adaptive-1'&gt;Bengio and Senecal (2008)&lt;/a&gt; .. Bengio paper applying importance sampling to NN&lt;/li&gt;
+&lt;li&gt;&lt;a href='#kong1992note' id='ref-kong1992note-1'&gt;Kong (1992)&lt;/a&gt; : Math on importance sampling&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;p id='bengio2008adaptive'&gt;Yoshua …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;NCE&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='#DBLP:journals/corr/Dyer14' id='ref-DBLP:journals/corr/Dyer14-1'&gt;Dyer (2014)&lt;/a&gt; .. Note on why not neg sampling for all tasks&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.tensorflow.org/api_guides/python/nn#Candidate_Sampling"&gt;https://www.tensorflow.org/api_guides/python/nn#Candidate_Sampling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Sampled softmax&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='#DBLP:journals/corr/JeanCMB14' id='ref-DBLP:journals/corr/JeanCMB14-1'&gt;Jean et al. (2014)&lt;/a&gt; .. Sampled softmax for language translation&lt;/li&gt;
+&lt;li&gt;&lt;a href='#bengio2008adaptive' id='ref-bengio2008adaptive-1'&gt;Bengio and Senecal (2008)&lt;/a&gt; .. Bengio paper applying importance sampling to NN&lt;/li&gt;
+&lt;li&gt;&lt;a href='#kong1992note' id='ref-kong1992note-1'&gt;Kong (1992)&lt;/a&gt; : Math on importance sampling&lt;/li&gt;
+&lt;/ul&gt;&lt;hr/&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;p id='bengio2008adaptive'&gt;Yoshua Bengio and Jean-S&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;bastien Sen&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;cal.
+Adaptive importance sampling to accelerate training of a neural probabilistic language model.
+&lt;em&gt;IEEE Transactions on Neural Networks&lt;/em&gt;, 19(4):713–722, 2008.
+URL: &lt;a href="www.iro.umontreal.ca/~lisa/publications2/index.php/attachments/single/177"&gt;www.iro.umontreal.ca/~lisa/publications2/index.php/attachments/single/177&lt;/a&gt;. &lt;a class="cite-backref" href="#ref-bengio2008adaptive-1" title="Jump back to reference 1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p id='DBLP:journals/corr/Dyer14'&gt;Chris Dyer.
+Notes on noise contrastive estimation and negative sampling.
+&lt;em&gt;CoRR&lt;/em&gt;, 2014.
+URL: &lt;a href="http://arxiv.org/abs/1410.8251"&gt;http://arxiv.org/abs/1410.8251&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1410.8251"&gt;arXiv:1410.8251&lt;/a&gt;. &lt;a class="cite-backref" href="#ref-DBLP:journals/corr/Dyer14-1" title="Jump back to reference 1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p id='DBLP:journals/corr/JeanCMB14'&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
+On using very large target vocabulary for neural machine translation.
+&lt;em&gt;CoRR&lt;/em&gt;, 2014.
+URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;. &lt;a class="cite-backref" href="#ref-DBLP:journals/corr/JeanCMB14-1" title="Jump back to reference 1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p id='kong1992note'&gt;Augustine Kong.
+A note on importance sampling using standardized weights.
+&lt;em&gt;University of Chicago, Dept. of Statistics, Tech. Rep&lt;/em&gt;, 1992.
+URL: &lt;a href="https://galton.uchicago.edu/techreports/tr348.pdf"&gt;https://galton.uchicago.edu/techreports/tr348.pdf&lt;/a&gt;. &lt;a class="cite-backref" href="#ref-kong1992note-1" title="Jump back to reference 1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="WIP"></category></entry><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;p&gt;Articles&lt;/p&gt;
 &lt;p&gt;TODO: Add subsections &lt;span class="math"&gt;\(P(x)\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
