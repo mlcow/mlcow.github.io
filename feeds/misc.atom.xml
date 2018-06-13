@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow - misc</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2018-05-20T00:00:00+05:30</updated><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;p&gt;Articles&lt;/p&gt;
-&lt;p&gt;TODO: Add subsections &lt;span class="math"&gt;\(P(x)\)&lt;/span&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow - misc</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2018-05-20T00:00:00+05:30</updated><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;h3&gt;Word embeddings &amp;amp; Language modeling:&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
-On using very large target vocabulary for neural machine translation.
-&lt;em&gt;CoRR&lt;/em&gt;, 2014.
-URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
-Efficient estimation …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Articles&lt;/p&gt;
-&lt;p&gt;TODO: Add subsections &lt;span class="math"&gt;\(P(x)\)&lt;/span&gt;&lt;/p&gt;
+&lt;li&gt;Yoshua Bengio, R&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;jean Ducharme, Pascal Vincent, and Christian Janvin.
+A neural probabilistic language model.
+&lt;em&gt;J. Mach. Learn. Res.&lt;/em&gt;, 3:1137–1155, March 2003.
+URL: &lt;a href="www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf"&gt;www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;One of the initial works in word embeddings&lt;/li&gt;
+&lt;li&gt;Ronan Collobert, Jason Weston …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;Word embeddings &amp;amp; Language modeling:&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;Yoshua Bengio, R&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;jean Ducharme, Pascal Vincent, and Christian Janvin.
+A neural probabilistic language model.
+&lt;em&gt;J. Mach. Learn. Res.&lt;/em&gt;, 3:1137–1155, March 2003.
+URL: &lt;a href="www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf"&gt;www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;One of the initial works in word embeddings&lt;/li&gt;
+&lt;li&gt;Ronan Collobert, Jason Weston, L&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;on Bottou, Michael Karlen, Koray Kavukcuoglu, and Pavel&amp;nbsp;P. Kuksa.
+Natural language processing (almost) from scratch.
+&lt;em&gt;CoRR&lt;/em&gt;, 2011.
+URL: &lt;a href="http://arxiv.org/abs/1103.0398"&gt;http://arxiv.org/abs/1103.0398&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1103.0398"&gt;arXiv:1103.0398&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Graham Neubig.
+Neural machine translation and sequence-to-sequence models: &lt;span class="bibtex-protected"&gt;A&lt;/span&gt; tutorial.
+&lt;em&gt;CoRR&lt;/em&gt;, 2017.
+URL: &lt;a href="http://arxiv.org/abs/1703.01619"&gt;http://arxiv.org/abs/1703.01619&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1703.01619"&gt;arXiv:1703.01619&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Detailed tutorial on machine translation. &lt;/li&gt;
+&lt;li&gt;Introduces various language modeling techniques: ngram models, NN, RNN, LSTM and Attention based models&lt;/li&gt;
 &lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
 On using very large target vocabulary for neural machine translation.
 &lt;em&gt;CoRR&lt;/em&gt;, 2014.
@@ -19,58 +32,30 @@ Efficient estimation of word representations in vector space.
 &lt;em&gt;CoRR&lt;/em&gt;, 2013.
 URL: &lt;a href="http://arxiv.org/abs/1301.3781"&gt;http://arxiv.org/abs/1301.3781&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1301.3781"&gt;arXiv:1301.3781&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%&amp;#64;#$&amp;#64;#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%&amp;#64;#$&amp;#64;#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;&lt;/ul&gt;</content></entry><entry><title>First Moo!</title><link href="https://mlcow.github.io/first-moo.html" rel="alternate"></link><published>2018-04-04T04:04:00+05:30</published><updated>2018-04-04T04:04:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-04-04:/first-moo.html</id><summary type="html">&lt;p&gt;Hey there!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey there!&lt;/p&gt;</content></entry></feed>
+&lt;h3&gt;NN&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Jaeyoung Kim, Mostafa El&lt;span class="bibtex-protected"&gt;-&lt;/span&gt;Khamy, and Jungwon Lee.
+Residual &lt;span class="bibtex-protected"&gt;LSTM:&lt;/span&gt; design of a deep recurrent architecture for distant speech recognition.
+&lt;em&gt;CoRR&lt;/em&gt;, 2017.
+URL: &lt;a href="http://arxiv.org/abs/1701.03360"&gt;http://arxiv.org/abs/1701.03360&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1701.03360"&gt;arXiv:1701.03360&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Julian&amp;nbsp;G. Zilly, Rupesh&amp;nbsp;Kumar Srivastava, Jan Koutn&lt;span class="bibtex-protected"&gt;\'&lt;span class="bibtex-protected"&gt;ı&lt;/span&gt;&lt;/span&gt;k, and J&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;ü&lt;/span&gt;&lt;/span&gt;rgen Schmidhuber.
+Recurrent highway networks.
+&lt;em&gt;CoRR&lt;/em&gt;, 2016.
+URL: &lt;a href="http://arxiv.org/abs/1607.03474"&gt;http://arxiv.org/abs/1607.03474&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1607.03474"&gt;arXiv:1607.03474&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Chris Dyer.
+Notes on noise contrastive estimation and negative sampling.
+&lt;em&gt;CoRR&lt;/em&gt;, 2014.
+URL: &lt;a href="http://arxiv.org/abs/1410.8251"&gt;http://arxiv.org/abs/1410.8251&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1410.8251"&gt;arXiv:1410.8251&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Geoffrey&amp;nbsp;E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov.
+Improving neural networks by preventing co-adaptation of feature detectors.
+&lt;em&gt;CoRR&lt;/em&gt;, 2012.
+URL: &lt;a href="http://arxiv.org/abs/1207.0580"&gt;http://arxiv.org/abs/1207.0580&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1207.0580"&gt;arXiv:1207.0580&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Paper on dropout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Search&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Rosie Jones and Daniel&amp;nbsp;C. Fain.
+Query word deletion prediction.
+In &lt;em&gt;Proceedings of the 26th Annual International ACM SIGIR Conference on Research and Development in Informaion Retrieval&lt;/em&gt;, SIGIR '03, 435–436. New York, NY, USA, 2003. ACM.
+URL: &lt;a href="http://doi.acm.org/10.1145/860435.860538"&gt;http://doi.acm.org/10.1145/860435.860538&lt;/a&gt;, &lt;a href="https://doi.org/10.1145/860435.860538"&gt;doi:10.1145/860435.860538&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/ul&gt;</content></entry><entry><title>First Moo!</title><link href="https://mlcow.github.io/first-moo.html" rel="alternate"></link><published>2018-04-04T04:04:00+05:30</published><updated>2018-04-04T04:04:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-04-04:/first-moo.html</id><summary type="html">&lt;p&gt;Hey there!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey there!&lt;/p&gt;</content></entry></feed>
