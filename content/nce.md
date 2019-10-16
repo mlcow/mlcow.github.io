@@ -1,5 +1,5 @@
 Title: NCE & Sampled Softmax
-Authors: Vijayender Karnaty
+Authors: voo4
 Tags: WIP
 Date: 2018-5-23
 Category: ml
