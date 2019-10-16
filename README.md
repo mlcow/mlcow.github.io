@@ -10,6 +10,8 @@
   - Before any `make` commands: `source venv/bin/activate`
   - Useful commands in make: `html`, `serve`
   - *`html` vs `publish`: Former generates local links, later generates absolute mlcow. links, pain for local verification*
+  - To add a draft for review: http://docs.getpelican.com/en/3.6.3/content.html#publishing-drafts \
+    TLDR; `Status: draft`, and visit url `.../drafts/` 
   - Help for make: `make`
     ```
     (venv) bash-3.2$ make
