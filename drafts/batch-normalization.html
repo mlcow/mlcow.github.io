@@ -83,61 +83,95 @@
         <li class="vcard author">
                  by&nbsp;<a class="url fn" href="https://mlcow.github.io/author/voo4.html">voo4</a>
         </li>
-        <li class="published" title="2019-10-16T00:00:00+05:30">
-          on&nbsp;Wed 16 October 2019
+        <li class="published" title="2019-10-19T00:00:00+05:30">
+          on&nbsp;Sat 19 October 2019
         </li>
 
 	</ul>
 
 </div><!-- /.post-info -->          <h1>Batch Normalization</h1>
 <p>Summary on <a href='#DBLP:journals/corr/IoffeS15' id='ref-DBLP:journals/corr/IoffeS15-1'>Ioffe and Szegedy (2015)</a></p>
-<h2>Introduction</h2>
-<ul>
-<li>14 times fewer training steps</li>
-</ul>
+<p><strong>Internal Covariate Shift</strong> is defined as <em>the change in the distribution of network activations due to the change in network parameters during training.</em> It captures the change in activation values as training progresses. In a Deep Neural Network this change in distribution of inputs at each layer, as training progresses demands - carefuly paremeter initailization and slower learning rates. Batch Normalization is a technique that helps address these problems arising from internal covariate shift. </p>
+<p>Also batch normalizaiton helps by
+- Permitting higher learning rates, and less careful initilization
+- Acting as Regularizer, eliminating the need for Dropout
+- Faster training. (Converges with 14 times fewer steps in the examples mentioned in the article)</p>
 <h2>The problem</h2>
+<p>Training a Deep Neural Network is complicated - As outputs and gradients are affected by previous layers. Even careful parameter initialization can help keep inputs to activations in good regions, only to a limited extent/time. Beyond which gradients are zero either due to saturation or activations close to origin.</p>
+<p>Problems arising from Internal Covariate Shift:</p>
 <ul>
-<li>Training is complicated due to multiple layers. Outputs and gradients are affected by multiple layers, harder to control.</li>
-<li>Internal covariate shift: Change in the distribution of layers' inputs</li>
-<li>Problems:</li>
-<li>Saturation of sigmoids</li>
-<li>Even with a  relu, gradients are highly dependent on output values at each layer. Which might result in haphazard steps with internal covariate shift. Thus slower learning rates are required to avoid missing minima.</li>
+<li>When activations move out of linear regime of sigmoid, Gradients stop flowing.</li>
+<li>And when using a relu, gradients are highly dependent on activation values (which experience an internal covariance shift). This might result in uncontrolled step sizes. Thus slower learning rates are required for convergence.</li>
 </ul>
-<h2>Existing attempts</h2>
+<p>These problems are usually addressed using</p>
 <ul>
-<li>Relu</li>
-<li>Careful initialization</li>
+<li>RELU as activation</li>
+<li>Careful initialization of weights (<a href='#glorot2010understanding' id='ref-glorot2010understanding-1'>Glorot and Bengio (2010)</a>, <a href='#DBLP:journals/corr/SaxeMG13' id='ref-DBLP:journals/corr/SaxeMG13-1'>Saxe et al. (2014)</a>)</li>
 <li>Small learning rates</li>
 </ul>
 <h2>Batch Normalization</h2>
-<ul>
-<li>Attempts to reduce internal covariate shift.</li>
-<li>Also beneficial on the gradient flow through the network, by reducing the dependence of gradients on the scale of parameters.</li>
-<li>Thus can have much higher learning rates</li>
-<li>
-<p>Also happens to regularize the model</p>
-</li>
-<li>
-<p>Internal Covariate Shift: Defined  as <em>the change in the distribution of network activations due to  the  change in network parameters during training.</em></p>
-</li>
-<li>
-<p><a href='#series/lncs/LeCunBOM12' id='ref-series/lncs/LeCunBOM12-1'>LeCun et al. (2012)</a> Network training converges faster if its inputs are whitened - i.e., linearly transformed to have zero means and unit variances, and decorrelated.</p>
-</li>
-<li>Here we try to whiten inputs at each layer, to get the inputs closer to a fixed distribution, removing ill effects of the internal covariate shift</li>
-</ul>
-<h4>When normalizing, the gradients at a layer out of each test case flow through additional paths</h4>
-<p>Let  <span class="math">\(\mathcal{X} = x_{1..N}\)</span> is the set of values of <span class="math">\(x\)</span> an input to a layer <span class="math">\(F(x,...)\)</span> over the training set.</p>
-<p>When normalizing <span class="math">\(F(x,...)\)</span> becomes <span class="math">\(F(\hat{x},...)\)</span>, where <span class="math">\(\hat{x} = \text{Norm}(x, \mathcal{X})\)</span> represents the whitening/normalization process.</p>
-<p>In unnormalized graph backprop, gradients flowing to <span class="math">\(x_i\)</span> would only be applicable to the <span class="math">\(i^{th}\)</span> training example's graph:
+<p>Network training is known to converge faster if its inputs are whitened <a href='#lecun1998efficient' id='ref-lecun1998efficient-1'>LeCun et al. (1998)</a> - i.e., linearly transformed to have zero means and unit variances, and decorrelated.</p>
+<blockquote>
+<p>It is know that convergence is usually faster if the average of each input is close to zero. In an extreme of all inputs being positive (or all inputs being negative) the weight updates have to be all of the same sign. The weights can only all decrease or all increase. If the actual solution requires some to decrease and some to increase, it can only be done by zigzagging. See <a href="https://www.youtube.com/watch?v=wEoyxE0GP2M&amp;feature=youtu.be&amp;t=526">Youtube: Lecture 6 | Training Neural Networks I | CS231n</a> for a detailed explanation.</p>
+</blockquote>
+<p>Whiteninig the inputs to a neural network [Mean canellation + Decorrelation(PCA) + Covariance equalization] helps in better gradient flow. But the effects are diminished as we go deeper in the network. Batch normalization tries to apply the same at every layer, in an attempt to removing ill effects of the internal covariate shift.</p>
+<p>However a full whitening would require computation of Covariance matrix <span class="math">\(\text{Cov}[x] = \mathbb{E}_{x \in \mathcal{X}}[xx^T] - \mathbb{E}[x]\mathbb{E}[x]^T\)</span> and its inverse square root for computation of whitened activations. This is computationally complex and adds more complexity to the backpropogation. Hence decorrelation is typically skipped.</p>
+<h4>How it's done</h4>
+<h5>At train time</h5>
+<blockquote>
+<p>Each dimension's mean and variance is computed across the samples in the mini batch. The input is mean cancelled and scaled by inverse of variance.</p>
+</blockquote>
+<p>For a layer with <span class="math">\(d\)</span>-dimensional input <span class="math">\(\mathrm{x}=\left(x^{(1)} \ldots x^{(d)}\right)\)</span>, each dimension is normalized
+</p>
+<div class="math">$$\widehat{x}^{(k)}=\frac{x^{(k)}-\mathrm{E}\left[x^{(k)}\right]}{\sqrt{\operatorname{Var}\left[x^{(k)}\right] + \epsilon}}$$</div>
+<blockquote>
+<p>The above normalization would result in constraining the inputs of every layer to <span class="math">\([-1, 1]\)</span> (a soft constraint). This will make it impossible for the activations (say sigmoid) to ever learn to saturate. Hence additional provision is made to enable the normalization to become an identity function.</p>
+</blockquote>
+<p>For each activation <span class="math">\(x^{(k)}\)</span> variables <span class="math">\(\gamma^{(k)}, \beta^{(k)}\)</span> are introduced which scale and shift the normalized value
+</p>
+<div class="math">$$
+y^{(k)}=\gamma^{(k)} \widehat{x}^{(k)}+\beta^{(k)}
+$$</div>
+<p>This <strong>Batch Normalizing Transformation</strong> can be represented as:
+</p>
+<div class="math">$$ \mathrm{BN}_{\gamma, \beta}: x_{1 \ldots m} \rightarrow y_{1 \ldots m} $$</div>
+<h5>At evaluation time</h5>
+<blockquote>
+<p>During evaluation/test, population statistics replace the batch statistics in batch normalization transformation</p>
+</blockquote>
+<div class="math">$$
+\widehat{x}=\frac{x-\mathrm{E}[x]}{\sqrt{\operatorname{Var}[x]+\epsilon}}
+$$</div>
+<p>At every layer, for the estimates of <span class="math">\(\mathrm{E}\left[x\right]\)</span> and <span class="math">\(\operatorname{Var}\left[x\right]\)</span>, population statistics are used. </p>
+<div class="math">$$
+\begin{aligned} \mathrm{E}[x] &amp; = \mathrm{E}_{\mathcal{B}}\left[\mu_{\mathcal{B}}\right] \\ \operatorname{Var}[x] &amp; = \frac{m}{m-1} \mathrm{E}_{\mathcal{B}}\left[\sigma_{\mathcal{B}}^{2}\right] \text{ An unbiased estimate for variance, considering } m \text{ batches} \end{aligned}
+$$</div>
+<h4>With batch normalization, the gradients flow through additional paths</h4>
+<blockquote>
+<p>Batch Normailzation is a differentiable transformation that introduces normalized activations into the network.</p>
+</blockquote>
+<p>The mean, variance, etc., computed during normalization are considered for gradient backpropagation.</p>
+<p>Let <span class="math">\(x\)</span> be an input to a layer <span class="math">\(F(x,...)\)</span>. And <span class="math">\(\mathcal{X} = x_{1..N}\)</span> is the set of values of <span class="math">\(x\)</span> over the training set.</p>
+<p>With batch normalization <span class="math">\(F(x,...)\)</span> is transformed to <span class="math">\(F(\widehat{x},...)\)</span>, where <span class="math">\(\widehat{x} = \text{Norm}(x, \mathcal{X})\)</span> represents the whitening/normalization process.</p>
+<p>In unnormalized graph backprop, gradients flowing to <span class="math">\(x_i\)</span> wouldn't flow through rest of <span class="math">\(\mathcal{X}\)</span>:
 </p>
 <div class="math">$$\frac{\partial L}{\partial x_i} = \frac{\partial F}{\partial x_i}\frac{\partial L}{\partial F}  $$</div>
-<p>In the normalized version backprop, <span class="math">\(F(\hat{x},...)\)</span> gradients through <span class="math">\(\hat{x_i}\)</span>
+<p>In the normalized version backprop, <span class="math">\(F(\widehat{x},...)\)</span> gradients through <span class="math">\(\widehat{x}_i\)</span>
 </p>
-<div class="math">$$\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial F}{\partial \hat{x_i}}\frac{\partial L}{\partial F}  $$</div>
+<div class="math">$$\frac{\partial L}{\partial \widehat{x}_i} = \frac{\partial F}{\partial \widehat{x}_i}\frac{\partial L}{\partial F}  $$</div>
 <p>
-further flow through <span class="math">\(x_i\)</span> and entire <span class="math">\(\mathcal{X}\)</span>, we need to calculate:
+further flow through <span class="math">\(x_i\)</span> and rest of <span class="math">\(\mathcal{X}\)</span>, we need to calculate:
 </p>
 <div class="math">$$\frac{\partial \text{Norm}(x_i,\mathcal{X})}{\partial x_i} \text{ and jacobian }  \frac{\partial \text{Norm}(x_i,\mathcal{X})}{\partial \mathcal{X}} $$</div>
+<h3>Benefits</h3>
+<ul>
+<li>Activations can receive inputs in the linear regime throught all layers.</li>
+<li>Beneficial on the gradient flow through the network, by reducing the dependence of gradients on the scale of parameters. Thus higher learning rates can be used.</li>
+<li>Regularizes the model, reducing the need for Dropout.<blockquote>
+<p>A training example is seen in conjunction with the other examples in the mini-batch. Thus the network cannot produce deterministic values for <em>a</em> given training example. Thus acting like a regularizer. In other words, if the network tries to overfit a given example, it inadvertantly effects other training examples and thus will be penalized with a higher loss.</p>
+</blockquote>
+</li>
+</ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
     var align = "center",
         indent = "0em",
@@ -194,15 +228,22 @@ further flow through <span class="math">\(x_i\)</span> and entire <span class="m
 }
 </script><hr/>
 <h2>References</h2>
-<ul><li><p class='cite-p' id='DBLP:journals/corr/IoffeS15'>Sergey Ioffe and Christian Szegedy.
+<ul><li><p class='cite-p' id='glorot2010understanding'>Xavier Glorot and Yoshua Bengio.
+Understanding the difficulty of training deep feedforward neural networks.
+In <em>Proceedings of the thirteenth international conference on artificial intelligence and statistics</em>, 249–256. 2010.
+URL: <a href="http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf">http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf</a>. <a class="cite-backref" href="#ref-glorot2010understanding-1" title="Jump back to reference 1">↩</a></p></li>
+<li><p class='cite-p' id='DBLP:journals/corr/IoffeS15'>Sergey Ioffe and Christian Szegedy.
 Batch normalization: accelerating deep network training by reducing internal covariate shift.
 <em>CoRR</em>, 2015.
 URL: <a href="http://arxiv.org/abs/1502.03167">http://arxiv.org/abs/1502.03167</a>, <a href="https://arxiv.org/abs/1502.03167">arXiv:1502.03167</a>. <a class="cite-backref" href="#ref-DBLP:journals/corr/IoffeS15-1" title="Jump back to reference 1">↩</a></p></li>
-<li><p class='cite-p' id='series/lncs/LeCunBOM12'>Yann LeCun, Léon Bottou, Genevieve&nbsp;B. Orr, and Klaus-Robert Müller.
+<li><p class='cite-p' id='lecun1998efficient'>Yann LeCun, Leon Bottou, G&nbsp;Orr, and Klaus-Robert Muller.
 Efficient backprop.
-In Grégoire Montavon, Genevieve&nbsp;B. Orr, and Klaus-Robert Müller, editors, <em>Neural Networks: Tricks of the Trade (2nd ed.)</em>, volume 7700 of Lecture Notes in Computer Science, pages 9&ndash;48.
-Springer, 2012.
-URL: <a href="http://dblp.uni-trier.de/db/series/lncs/lncs7700.html#LeCunBOM12">http://dblp.uni-trier.de/db/series/lncs/lncs7700.html#LeCunBOM12</a>. <a class="cite-backref" href="#ref-series/lncs/LeCunBOM12-1" title="Jump back to reference 1">↩</a></p></li>
+<em>Neural Networks: Tricks of the Trade. New York: Springer</em>, 1998.
+URL: <a href="http://cseweb.ucsd.edu/classes/wi08/cse253/Handouts/lecun-98b.pdf">http://cseweb.ucsd.edu/classes/wi08/cse253/Handouts/lecun-98b.pdf</a>. <a class="cite-backref" href="#ref-lecun1998efficient-1" title="Jump back to reference 1">↩</a></p></li>
+<li><p class='cite-p' id='DBLP:journals/corr/SaxeMG13'>Andrew&nbsp;M. Saxe, James&nbsp;L. McClelland, and Surya Ganguli.
+Exact solutions to the nonlinear dynamics of learning in deep linear neural networks.
+In <em>2nd International Conference on Learning Representations, <span class="bibtex-protected">ICLR</span> 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings</em>. 2014.
+URL: <a href="http://arxiv.org/abs/1312.6120">http://arxiv.org/abs/1312.6120</a>. <a class="cite-backref" href="#ref-DBLP:journals/corr/SaxeMG13-1" title="Jump back to reference 1">↩</a></p></li>
 </ul>
         </div><!-- /.entry-content -->
         <div class="comments">
