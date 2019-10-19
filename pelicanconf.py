@@ -7,6 +7,7 @@ SITENAME = u'mlcow'
 SITESUBTITLE = u'mlcow'
 SITEURL = ''
 THEME = 'my_themes/SoMA2/'
+CSS_FILE = 'main.css?2'
 #THEME = 'pelican-blueidea'
 DISQUS_SITENAME = "mlcow-github-io"
 PLUGIN_PATHS = ['pelican-plugins', 'plugins']
