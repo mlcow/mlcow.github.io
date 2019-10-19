@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/all.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2019-10-19T00:00:00+05:30</updated><entry><title>Batch Normalization</title><link href="https://mlcow.github.io/batch-normalization.html" rel="alternate"></link><published>2019-10-19T00:00:00+05:30</published><updated>2019-10-19T00:00:00+05:30</updated><author><name>voo4</name></author><id>tag:mlcow.github.io,2019-10-19:/batch-normalization.html</id><summary type="html">&lt;h1&gt;Batch Normalization&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>mlcow - papers</title><link href="https://mlcow.github.io/" rel="alternate"></link><link href="https://mlcow.github.io/feeds/papers.atom.xml" rel="self"></link><id>https://mlcow.github.io/</id><updated>2019-10-19T00:00:00+05:30</updated><entry><title>Batch Normalization</title><link href="https://mlcow.github.io/batch-normalization.html" rel="alternate"></link><published>2019-10-19T00:00:00+05:30</published><updated>2019-10-19T00:00:00+05:30</updated><author><name>voo4</name></author><id>tag:mlcow.github.io,2019-10-19:/batch-normalization.html</id><summary type="html">&lt;h1&gt;Batch Normalization&lt;/h1&gt;
 &lt;p&gt;Summary on &lt;a href='#DBLP:journals/corr/IoffeS15' id='ref-DBLP:journals/corr/IoffeS15-1'&gt;Ioffe and Szegedy (2015)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Internal Covariate Shift&lt;/strong&gt; is defined as &lt;em&gt;the change in the distribution of network activations due to the change in network parameters during training.&lt;/em&gt; It captures the change in activation values as training progresses. In a Deep Neural Network this change in distribution …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Batch Normalization&lt;/h1&gt;
 &lt;p&gt;Summary on &lt;a href='#DBLP:journals/corr/IoffeS15' id='ref-DBLP:journals/corr/IoffeS15-1'&gt;Ioffe and Szegedy (2015)&lt;/a&gt;&lt;/p&gt;
@@ -158,63 +158,4 @@ URL: &lt;a href="http://cseweb.ucsd.edu/classes/wi08/cse253/Handouts/lecun-98b.p
 Exact solutions to the nonlinear dynamics of learning in deep linear neural networks.
 In &lt;em&gt;2nd International Conference on Learning Representations, &lt;span class="bibtex-protected"&gt;ICLR&lt;/span&gt; 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings&lt;/em&gt;. 2014.
 URL: &lt;a href="http://arxiv.org/abs/1312.6120"&gt;http://arxiv.org/abs/1312.6120&lt;/a&gt;. &lt;a class="cite-backref" href="#ref-DBLP:journals/corr/SaxeMG13-1" title="Jump back to reference 1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</content></entry><entry><title>Good reads</title><link href="https://mlcow.github.io/good-reads.html" rel="alternate"></link><published>2018-05-20T00:00:00+05:30</published><updated>2018-05-20T00:00:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-05-20:/good-reads.html</id><summary type="html">&lt;h3&gt;Word embeddings &amp;amp; Language modeling:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Yoshua Bengio, R&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;jean Ducharme, Pascal Vincent, and Christian Janvin.
-A neural probabilistic language model.
-&lt;em&gt;J. Mach. Learn. Res.&lt;/em&gt;, 3:1137–1155, March 2003.
-URL: &lt;a href="www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf"&gt;www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;One of the initial works in word embeddings&lt;/li&gt;
-&lt;li&gt;Ronan Collobert, Jason Weston …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;Word embeddings &amp;amp; Language modeling:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Yoshua Bengio, R&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;jean Ducharme, Pascal Vincent, and Christian Janvin.
-A neural probabilistic language model.
-&lt;em&gt;J. Mach. Learn. Res.&lt;/em&gt;, 3:1137–1155, March 2003.
-URL: &lt;a href="www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf"&gt;www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;One of the initial works in word embeddings&lt;/li&gt;
-&lt;li&gt;Ronan Collobert, Jason Weston, L&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;on Bottou, Michael Karlen, Koray Kavukcuoglu, and Pavel&amp;nbsp;P. Kuksa.
-Natural language processing (almost) from scratch.
-&lt;em&gt;CoRR&lt;/em&gt;, 2011.
-URL: &lt;a href="http://arxiv.org/abs/1103.0398"&gt;http://arxiv.org/abs/1103.0398&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1103.0398"&gt;arXiv:1103.0398&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Graham Neubig.
-Neural machine translation and sequence-to-sequence models: &lt;span class="bibtex-protected"&gt;A&lt;/span&gt; tutorial.
-&lt;em&gt;CoRR&lt;/em&gt;, 2017.
-URL: &lt;a href="http://arxiv.org/abs/1703.01619"&gt;http://arxiv.org/abs/1703.01619&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1703.01619"&gt;arXiv:1703.01619&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Detailed tutorial on machine translation. &lt;/li&gt;
-&lt;li&gt;Introduces various language modeling techniques: ngram models, NN, RNN, LSTM and Attention based models&lt;/li&gt;
-&lt;li&gt;S&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;é&lt;/span&gt;&lt;/span&gt;bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
-On using very large target vocabulary for neural machine translation.
-&lt;em&gt;CoRR&lt;/em&gt;, 2014.
-URL: &lt;a href="http://arxiv.org/abs/1412.2007"&gt;http://arxiv.org/abs/1412.2007&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1412.2007"&gt;arXiv:1412.2007&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
-Efficient estimation of word representations in vector space.
-&lt;em&gt;CoRR&lt;/em&gt;, 2013.
-URL: &lt;a href="http://arxiv.org/abs/1301.3781"&gt;http://arxiv.org/abs/1301.3781&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1301.3781"&gt;arXiv:1301.3781&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;NN&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Jaeyoung Kim, Mostafa El&lt;span class="bibtex-protected"&gt;-&lt;/span&gt;Khamy, and Jungwon Lee.
-Residual &lt;span class="bibtex-protected"&gt;LSTM:&lt;/span&gt; design of a deep recurrent architecture for distant speech recognition.
-&lt;em&gt;CoRR&lt;/em&gt;, 2017.
-URL: &lt;a href="http://arxiv.org/abs/1701.03360"&gt;http://arxiv.org/abs/1701.03360&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1701.03360"&gt;arXiv:1701.03360&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Julian&amp;nbsp;G. Zilly, Rupesh&amp;nbsp;Kumar Srivastava, Jan Koutn&lt;span class="bibtex-protected"&gt;\'&lt;span class="bibtex-protected"&gt;ı&lt;/span&gt;&lt;/span&gt;k, and J&lt;span class="bibtex-protected"&gt;&lt;span class="bibtex-protected"&gt;ü&lt;/span&gt;&lt;/span&gt;rgen Schmidhuber.
-Recurrent highway networks.
-&lt;em&gt;CoRR&lt;/em&gt;, 2016.
-URL: &lt;a href="http://arxiv.org/abs/1607.03474"&gt;http://arxiv.org/abs/1607.03474&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1607.03474"&gt;arXiv:1607.03474&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Chris Dyer.
-Notes on noise contrastive estimation and negative sampling.
-&lt;em&gt;CoRR&lt;/em&gt;, 2014.
-URL: &lt;a href="http://arxiv.org/abs/1410.8251"&gt;http://arxiv.org/abs/1410.8251&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1410.8251"&gt;arXiv:1410.8251&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Geoffrey&amp;nbsp;E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov.
-Improving neural networks by preventing co-adaptation of feature detectors.
-&lt;em&gt;CoRR&lt;/em&gt;, 2012.
-URL: &lt;a href="http://arxiv.org/abs/1207.0580"&gt;http://arxiv.org/abs/1207.0580&lt;/a&gt;, &lt;a href="https://arxiv.org/abs/1207.0580"&gt;arXiv:1207.0580&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Paper on dropout&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Search&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Rosie Jones and Daniel&amp;nbsp;C. Fain.
-Query word deletion prediction.
-In &lt;em&gt;Proceedings of the 26th Annual International ACM SIGIR Conference on Research and Development in Informaion Retrieval&lt;/em&gt;, SIGIR '03, 435–436. New York, NY, USA, 2003. ACM.
-URL: &lt;a href="http://doi.acm.org/10.1145/860435.860538"&gt;http://doi.acm.org/10.1145/860435.860538&lt;/a&gt;, &lt;a href="https://doi.org/10.1145/860435.860538"&gt;doi:10.1145/860435.860538&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/ul&gt;</content></entry><entry><title>First Moo!</title><link href="https://mlcow.github.io/first-moo.html" rel="alternate"></link><published>2018-04-04T04:04:00+05:30</published><updated>2018-04-04T04:04:00+05:30</updated><author><name>mlcow</name></author><id>tag:mlcow.github.io,2018-04-04:/first-moo.html</id><summary type="html">&lt;p&gt;Hey there!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey there!&lt;/p&gt;</content></entry></feed>
+&lt;/ul&gt;</content></entry></feed>
