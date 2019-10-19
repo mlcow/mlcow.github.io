@@ -42,8 +42,6 @@
 <!--         <br/> -->
 <!--         <br/> -->
 <!--      -->        
-<!--       <li><a href="">NCE & Sampled Softmax</a></li> -->
-<!--      -->        
 <!--       <li><a href="">Good reads</a></li> -->
 <!--      -->        
 <!--       <li><a href="">First Moo!</a></li> -->
@@ -65,7 +63,6 @@
 
 <ul>
 	<li><a href="https://mlcow.github.io/category/misc.html">misc</a></li>
-	<li><a href="https://mlcow.github.io/category/ml.html">ml</a></li>
 </ul>
  
   </div>
@@ -92,8 +89,110 @@
 
 	</ul>
 
-</div><!-- /.post-info -->          <h3>Batch Normalization</h3>
-<p>Summary on <a href='#DBLP:journals/corr/IoffeS15' id='ref-DBLP:journals/corr/IoffeS15-1'>Ioffe and Szegedy (2015)</a></p><hr/>
+</div><!-- /.post-info -->          <h2>Batch Normalization</h2>
+<p>Summary on <a href='#DBLP:journals/corr/IoffeS15' id='ref-DBLP:journals/corr/IoffeS15-1'>Ioffe and Szegedy (2015)</a></p>
+<h2>Introduction</h2>
+<ul>
+<li>14 times fewer training steps</li>
+</ul>
+<h2>The problem</h2>
+<ul>
+<li>Training is complicated due to multiple layers. Outputs and gradients are affected by multiple layers, harder to control.</li>
+<li>Internal covariate shift: Change in the distribution of layers' inputs</li>
+<li>Problems:</li>
+<li>Saturation of sigmoids</li>
+<li>Even with a  relu, gradients are highly dependent on output values at each layer. Which might result in haphazard steps with internal covariate shift. Thus slower learning rates are required to avoid missing minima.</li>
+</ul>
+<h2>Existing attempts</h2>
+<ul>
+<li>Relu</li>
+<li>Careful initialization</li>
+<li>Small learning rates</li>
+</ul>
+<h2>Batch Normalization</h2>
+<ul>
+<li>Attempts to reduce internal covariate shift.</li>
+<li>Also beneficial on the gradient flow through the network, by reducing the dependence of gradients on the scale of parameters.</li>
+<li>Thus can have much higher learning rates</li>
+<li>
+<p>Also happens to regularize the model</p>
+</li>
+<li>
+<p>Internal Covariate Shift: Defined  as /the change in the distribution of network activations due to  the  change in network parameters during training./</p>
+</li>
+<li>
+<p>[&#64;series/lncs/LeCunBOM12] Network training converges faster if its inputs are whitened - i.e., linearly transformed to have zero means and unit variances, and decorrelated.</p>
+</li>
+<li>Here we try to whiten inputs at each layer, to get the inputs closer to a fixed distribution, removing ill effects of the internal covariate shift</li>
+</ul>
+<h2>When normalizing, the gradients at a layer out of each test case flow through additional paths</h2>
+<p>Let  <span class="math">\(\mathcal{X} = x_{1..N}\)</span> is the set of values of <span class="math">\(x\)</span> an input to a layer <span class="math">\(F(x,...)\)</span> over the training set.</p>
+<p>When normalizing <span class="math">\(F(x,...)\)</span> becomes <span class="math">\(F(\hat{x},...)\)</span>, where <span class="math">\(\hat{x} = \text{Norm}(x, \mathcal{X})\)</span> represents the whitening/normalization process.</p>
+<p>In unnormalized graph backprop, gradients flowing to <span class="math">\(x_i\)</span> would only be applicable to the <span class="math">\(i^{th}\)</span> training example's graph:
+</p>
+<div class="math">$$\frac{\partial L}{\partial x_i} = \frac{\partial F}{\partial x_i}\frac{\partial L}{\partial F}  $$</div>
+<p>In the normalized version backprop, <span class="math">\(F(\hat{x},...)\)</span> gradients through <span class="math">\(\hat{x_i}\)</span>
+</p>
+<div class="math">$$\frac{\partial L}{\partial \hat{x_i}} = \frac{\partial F}{\partial \hat{x_i}}\frac{\partial L}{\partial F}  $$</div>
+<p>
+further flow through <span class="math">\(x_i\)</span> and entire <span class="math">\(\mathcal{X}\)</span>, we need to calculate:
+</p>
+<div class="math">$$\frac{\partial \text{Norm}(x_i,\mathcal{X})}{\partial x_i} \text{ and jacobian }  \frac{\partial \text{Norm}(x_i,\mathcal{X})}{\partial \mathcal{X}} $$</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%&#64;#$&#64;#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%&#64;#$&#64;#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script><hr/>
 <h2>References</h2>
 <ul><li><p id='DBLP:journals/corr/IoffeS15'>Sergey Ioffe and Christian Szegedy.
 Batch normalization: accelerating deep network training by reducing internal covariate shift.
