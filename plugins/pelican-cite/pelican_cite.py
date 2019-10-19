@@ -134,7 +134,7 @@ def process_content(article):
         t = t.replace('\\}', '&#125;')
         t = t.replace('{', '')
         t = t.replace('}', '')
-        text = ("<li><p id='" + ref_id + "'>" + t)
+        text = ("<li><p class='cite-p' id='" + ref_id + "'>" + t)
         for i in range(cite_count[key]):
             if i == 0:
                 text += ' ' + JUMP_BACK.format(ref_id,1,'↩')
