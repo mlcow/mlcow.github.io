@@ -10,6 +10,7 @@ THEME = 'my_themes/SoMA2/'
 CSS_FILE = 'main.css?2'
 #THEME = 'pelican-blueidea'
 DISQUS_SITENAME = "mlcow-github-io"
+GOOGLE_ANALYTICS = "UA-150419350-1"
 PLUGIN_PATHS = ['pelican-plugins', 'plugins']
 PLUGINS = ['pelican-cite', 'render_math']
 #PLUGINS = ['pelican-cite', 'pandoc_reader', 'render_math']
